@@ -1,6 +1,6 @@
 {
   "name": "bower-typings",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility to retrieve typescript definitions from bower dependencies.",
   "main": "index.js",
   "scripts": {
