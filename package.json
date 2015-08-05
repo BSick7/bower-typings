@@ -1,0 +1,28 @@
+{
+  "name": "bower-typings",
+  "version": "0.1.0",
+  "description": "Utility to retrieve typescript definitions from bower dependencies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSick7/bower-typings.git"
+  },
+  "keywords": [
+    "unify",
+    "bower",
+    "tsd",
+    "typescript"
+  ],
+  "author": "Brad Sickles <brad.sickles@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BSick7/bower-typings/issues"
+  },
+  "homepage": "https://github.com/BSick7/bower-typings#readme",
+  "dependencies": {
+    "fayde-unify": "^0.4.14"
+  }
+}
