@@ -7,9 +7,9 @@ See [fayde-unify](https://github.com/wsick/fayde-unify) for more information on 
 `require('bower-typings')([options])`
 
 options
-- unifyPath (default `./unify.json`) - path to unify file
-- includeSelf (default: true) - include/exclude typings defined in `typings` in own `unify.json`.
-- includeDevSelf (default: true) - include/exclude typings defined in `devTypings` in own `unify.json`.
+- `unifyPath` (default `./unify.json`) - path to unify file
+- `includeSelf` (default: true) - include/exclude typings defined in `typings` in own `unify.json`.
+- `includeDevSelf` (default: true) - include/exclude typings defined in `devTypings` in own `unify.json`.
 
 ```javascript
 // Simple - Finds all typings from unify.json
