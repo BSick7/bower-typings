@@ -1,6 +1,6 @@
 # bower-typings
-Tool to retrieve typescript definitions from bower dependencies.
-
+Utility to retrieve typescript definitions from bower dependencies using unify.json.
+See [fayde-unify](https://github.com/wsick/fayde-unify) for more information on unify.json.
 
 ## Usage
 
