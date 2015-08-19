@@ -75,7 +75,10 @@ function unique(arr) {
     }, []);
 }
 
-index.scan = function () {
+index.scan = function (options) {
+    options = options || {};
+    options.self = options.self !== false;
+
     var brc = bowerConfig.read();
     var bdir = (brc || {}).directory || "bower_components";
     var pattern = "";
@@ -83,6 +86,9 @@ index.scan = function () {
         pattern = bdir.substr(0, bdir.length - 1);
     else
         pattern = bdir;
-    pattern += "/**/typings/**/*.d.ts";
-    return glob.sync(pattern);
+    pattern += '/**/typings/**/*.d.ts';
+    var deps = glob.sync(pattern);
+    if (!options.self)
+        return deps;
+    return deps.concat(glob.sync('typings/**/*.d.ts'));
 };
