@@ -1,9 +1,13 @@
 var path = require('path'),
+    glob = require('glob'),
+    bowerConfig = require('bower-config'),
     unify = require('fayde-unify'),
     JsonFile = unify.JsonFile,
     Library = unify.Library;
 
-module.exports = function (config) {
+module.exports = index;
+
+function index(config) {
     config = config || {};
     config.basePath = config.basePath || "";
     if (config.unifyPath == null) {
@@ -14,8 +18,7 @@ module.exports = function (config) {
     config.includeSelf = config.includeSelf !== false;
     config.includeDevSelf = config.includeDevSelf !== false;
     return getAllTypings(config);
-};
-
+}
 
 function getAllTypings(config) {
     var unify = new JsonFile(config.unifyPath);
@@ -71,3 +74,21 @@ function unique(arr) {
         })) ? agg : agg.concat([cur]);
     }, []);
 }
+
+index.scan = function (options) {
+    options = options || {};
+    options.self = options.self !== false;
+
+    var brc = bowerConfig.read();
+    var bdir = (brc || {}).directory || "bower_components";
+    var pattern = "";
+    if (bdir[bdir.length - 1] === "/")
+        pattern = bdir.substr(0, bdir.length - 1);
+    else
+        pattern = bdir;
+    pattern += '/**/typings/**/*.d.ts';
+    var deps = glob.sync(pattern);
+    if (!options.self)
+        return deps;
+    return deps.concat(glob.sync('typings/**/*.d.ts'));
+};
