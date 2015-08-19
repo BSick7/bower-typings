@@ -1,6 +1,6 @@
 {
   "name": "bower-typings",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Utility to retrieve typescript definitions from bower dependencies.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/BSick7/bower-typings#readme",
   "dependencies": {
-    "fayde-unify": "^0.4.14"
+    "bower-config": "^0.6.1",
+    "fayde-unify": "^0.4.14",
+    "glob": "^5.0.14"
   }
 }
