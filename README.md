@@ -21,3 +21,18 @@ var typings = require('bower-typings')({includeSelf: false});
 // Exclude my dev typings
 var typings = require('bower-typings')({includeDevSelf: false});
 ```
+
+### Scan
+
+`require('bower-typings').scan([options])`
+
+options
+- `self` (default: true) - include/exclude typings defined in `./typings/**/*.d.ts`.
+
+```javascript
+// Simple - Finds all typings in every bower library (including self) in typings directory.
+var typings = require('bower-typings').scan();
+
+// Finds all typings in every bower library (excluding self) in typings directory.
+var typings = require('bower-typings').scan({ self: false });
+```
